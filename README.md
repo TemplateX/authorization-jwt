@@ -29,6 +29,7 @@ pip install -r requirements.txt
 - SQLAlchemy 2.0 (async) + aiosqlite
 - JWT
 - passlib[bcrypt]
+- hashlib
 - Pydantic
 
 ---
