@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ## 📦 Установка и запуск
 
-Создайте `.env`:
+Создайте `.env` в корне проекта:
 
 ```ini
 ADMIN_PASSWORD="admin_password"
