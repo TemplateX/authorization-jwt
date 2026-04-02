@@ -13,13 +13,20 @@
 ```
 
 
-Работать с виртуальным окружением. Установить зависимости. 
+Работать с виртуальным окружением. Установить зависимости.  
+
+windows
 ```bash
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 ```
-
+linux
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 ---
 
 ## 🚀 Стек
@@ -56,9 +63,11 @@ JWT_SECRET_KEY="admin_jwt_key_dont_show_to_anyone"
 python -m app.main
 ```
 
-После запуска один раз выполните инициализацию. Создастся БД м админ. Данные админа в `.env`.
-Можете этого не делать, таблица создастся сама (asynccontextmanager) с нужными полями, но она будет пуста. 
-
+После запуска один раз выполните инициализацию. Создастся БД м админ. Данные админа в `.env`.  
+Можете этого не делать, таблица создастся сама (asynccontextmanager) с нужными полями, но она будет пуста.  
+> [!WARNING]
+> ### ⚠️ ВНИМАНИЕ
+> После выполнения обращения к этому эндпоинту все данные в БД будут удлены. Появится только админ. 
 ```
 curl -X POST "http://localhost:8000/service/setup_database?setup_db_key=mysetupkey"
 ```
