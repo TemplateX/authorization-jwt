@@ -1,0 +1,13 @@
+# Окружение и секреты
+.env
+
+# База данных
+*.sqlite
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+env/
