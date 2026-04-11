@@ -3,9 +3,7 @@ from typing import Annotated
 
 from dotenv import load_dotenv
 from fastapi import Depends
-
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, async_session
-
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 
 env_path = Path(__file__).resolve().parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -19,4 +17,4 @@ async def get_session():
         yield session
 
 
-SessionDep = Annotated[async_session, Depends(get_session)]
+SessionDep = Annotated[AsyncSession, Depends(get_session)]

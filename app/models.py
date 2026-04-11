@@ -5,6 +5,7 @@ from typing import Optional
 from sqlalchemy import ForeignKey, Enum, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
+
 class Base(DeclarativeBase):
     pass
 
@@ -38,4 +39,3 @@ class TokenModel(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     expires: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     refresh_hash_token: Mapped[str]
-
